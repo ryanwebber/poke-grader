@@ -137,7 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle search input changes
     let searchInput = document.getElementById('pokemon-search') as HTMLInputElement;
     searchInput.addEventListener('change', (event) => {
-        let value = (event.target as HTMLInputElement).value;
+        let target = event.target as HTMLInputElement;
+        let value = target.value;
         let slug = value.toLowerCase();
         let species = standardPokedex[slug];
         if (species) {
@@ -152,6 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Create new result
             let cardElement = createDOMElementForPokemon(slug);
             container.appendChild(cardElement);
+
+            // Dismiss keyboard on mobile
+            searchInput.blur();
         }
     });
 });
