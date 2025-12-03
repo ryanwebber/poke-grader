@@ -9,20 +9,20 @@
 </head>
 
 <body>
-    <div class="mb-6 sm:mb-24 p-8 flex flex-col items-center">
+    <div class="mb-2 p-8 flex flex-col items-center">
         <div class="max-w-lg">
             <img class="mx-auto max-w-full" src="pokegrader.png" />
         </div>
         <input type="text" id="pokemon-search" name="autocomplete"
-            class="rounded-lg p-2 border border-gray-500 text-xl w-full max-w-96 no-highlight text-center"
+            class="rounded-lg py-2 px-4 border border-gray-500 text-xl w-full max-w-96 no-highlight text-center"
             list="pokemon-data-list" placeholder="Search for a Pokèmon..." />
         <datalist id="autocomplete-list">
         </datalist>
     </div>
-    <div class="flex flex-wrap justify-evenly items-stretch place-content-evenly gap-4 m-4" id="cards-list">
+    <div class="flex flex-wrap justify-evenly m-4" id="result-card">
     </div>
     <template id="template-pokemon-item">
-        <div class=" max-w-full min-w-36 min-h-64 rounded-lg border-2 shadow-md bg-white relative overflow-hidden"
+        <div class=" max-w-full min-w-60 min-h-72 rounded-lg border-2 shadow-md bg-white relative overflow-hidden"
             data-tag-card>
             <div class="absolute w-8 h-8 flex justify-center items-center rounded-br-lg" data-tag-stamp>
                 <p class="text-center font-bold text-white" data-tag-grade>A</p>
